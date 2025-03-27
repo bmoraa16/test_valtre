@@ -12,7 +12,7 @@ ThemeData getDarkModeThemeData() {
   final placeholderColor = AppColors.hbGrey.withOpacity(0.5);
   final backgroundColor = AppColors.hbWhite.getMaterialColor();
   return ThemeData(
-    fontFamily: "Avenir",
+    fontFamily: "Poppins",
     primaryColor: primaryColor,
     primarySwatch: primaryColor,
     colorScheme: AppThemes.darkColorScheme,

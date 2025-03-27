@@ -12,7 +12,7 @@ ThemeData getLightModeThemeData() {
   final placeholderColor = AppColors.hbGrey.withOpacity(0.5);
   final backgroundColor = AppColors.hbWhite.getMaterialColor();
   return ThemeData(
-    fontFamily: "Avenir",
+    fontFamily: "Poppins",
     colorScheme: AppThemes.lightColorScheme,
     iconTheme: IconThemeData(color: primaryColor),
     inputDecorationTheme: InputDecorationTheme(
