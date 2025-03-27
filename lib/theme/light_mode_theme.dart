@@ -7,7 +7,7 @@ import 'package:flutter_test_project/theme/app_themes.dart';
 ThemeData getLightModeThemeData() {
   final primaryColor = AppColors.hbPink.getMaterialColor();
   final secondaryColor = AppColors.hbBlueAccent.getMaterialColor();
-  final labelColor = AppColors.hbGrey.getMaterialColor();
+  final labelColor = AppColors.grayScaleDark.getMaterialColor();
   final inputColor = AppColors.hbVioletText.getMaterialColor();
   final placeholderColor = AppColors.hbGrey.withOpacity(0.5);
   final backgroundColor = AppColors.hbWhite.getMaterialColor();

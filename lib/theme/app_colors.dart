@@ -17,6 +17,29 @@ abstract class AppColors {
   static final Color hbRed = "#ed3a4e".toColor();
   static final Color hbBlueText = "#3a2a5d".toColor();
   static final Color hbRedPrimary = "#DC0A2D".toColor();
+  static final Color pokemonTypeBug = "#A7B723".toColor();
+  static final Color pokemonTypeDark = "#75574C".toColor();
+  static final Color pokemonTypeDragon = "#7037FF".toColor();
+  static final Color pokemonTypeEletric = "#F9CF30".toColor();
+  static final Color pokemonTypeFairy = "#E69EAC".toColor();
+  static final Color pokemonTypeFighting = "#C12239".toColor();
+  static final Color pokemonTypeFire = "#F57D31".toColor();
+  static final Color pokemonTypeFlying = "#A891EC".toColor();
+  static final Color pokemonTypeGhost = "#70559B".toColor();
+  static final Color pokemonTypeNormal = "#AAA67F".toColor();
+  static final Color pokemonTypeGrass = "#74CB48".toColor();
+  static final Color pokemonTypeGround = "#DEC16B".toColor();
+  static final Color pokemonTypeIce = "#9AD6DF".toColor();
+  static final Color pokemonTypePoison = "#A43E9E".toColor();
+  static final Color pokemonTypePsychic = "#FB5584".toColor();
+  static final Color pokemonTypeRock = "#B69E31".toColor();
+  static final Color pokemonTypeSteel = "#B7B9D0".toColor();
+  static final Color pokemonTypeWatter = "#6493EB".toColor();
+  static final Color grayScaleDark = "#212121".toColor();
+  static final Color grayScaleMedium = "#666666".toColor();
+  static final Color grayScaleLight = "#E0E0E0".toColor();
+  static final Color grayScaleBackground = "#EFEFEF".toColor();
+  static final Color grayScaleWhite = "#FFFFFF".toColor();
 
   static List<Color> getHomeGradientColors() {
     final now = DateTime.now();
