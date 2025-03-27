@@ -3,27 +3,27 @@ abstract class AppAssets {
 
   //Icons png
   static const arrowBackIcon = "assets/icons/png/arrow_back.png";
-  static const arrowchevronLeftIcon = "assets/icons/png/chevron_left.png";
-  static const arrowchevronRightIcon = "assets/icons/png/chevron_right.png";
-  static const arrowCloseIcon = "assets/icons/png/close.png";
-  static const arrowPokeballIcon = "assets/icons/png/pokeball.png";
-  static const arrowSearchIcon = "assets/icons/png/search.png";
-  static const arrowSortIcon = "assets/icons/png/sort.png";
-  static const arrowStraightenIcon = "assets/icons/png/straighten.png";
-  static const arrowTagIcon = "assets/icons/png/tag.png";
-  static const arrowTextFormatIcon = "assets/icons/png/text_format.png";
-  static const arrowWeightIcon = "assets/icons/png/weight.png";
+  static const chevronLeftIcon = "assets/icons/png/chevron_left.png";
+  static const chevronRightIcon = "assets/icons/png/chevron_right.png";
+  static const closeIcon = "assets/icons/png/close.png";
+  static const pokeballIcon = "assets/icons/png/pokeball.png";
+  static const searchIcon = "assets/icons/png/search.png";
+  static const sortIcon = "assets/icons/png/sort.png";
+  static const straightenIcon = "assets/icons/png/straighten.png";
+  static const tagIcon = "assets/icons/png/tag.png";
+  static const textFormatIcon = "assets/icons/png/text_format.png";
+  static const weightIcon = "assets/icons/png/weight.png";
 
   //Icons svg
   static const arrowBackIconSvg = "assets/icons/svg/arrow_back.svg";
-  static const arrowchevronLeftIconSvg = "assets/icons/svg/chevron_left.svg";
-  static const arrowchevronRightIconSvg = "assets/icons/svg/chevron_right.svg";
-  static const arrowCloseIconSvg = "assets/icons/svg/close.svg";
-  static const arrowPokeballIconSvg = "assets/icons/svg/pokeball.svg";
-  static const arrowSearchIconSvg = "assets/icons/svg/search.svg";
-  static const arrowSortIconSvg = "assets/icons/svg/sort.svg";
-  static const arrowStraightenIconSvg = "assets/icons/svg/straighten.svg";
-  static const arrowTagIconSvg = "assets/icons/svg/tag.svg";
-  static const arrowTextFormatIconSvg = "assets/icons/svg/text_format.svg";
-  static const arrowWeightIconSvg = "assets/icons/svg/weight.svg";
+  static const chevronLeftIconSvg = "assets/icons/svg/chevron_left.svg";
+  static const chevronRightIconSvg = "assets/icons/svg/chevron_right.svg";
+  static const closeIconSvg = "assets/icons/svg/close.svg";
+  static const pokeballIconSvg = "assets/icons/svg/pokeball.svg";
+  static const searchIconSvg = "assets/icons/svg/search.svg";
+  static const sortIconSvg = "assets/icons/svg/sort.svg";
+  static const straightenIconSvg = "assets/icons/svg/straighten.svg";
+  static const tagIconSvg = "assets/icons/svg/tag.svg";
+  static const textFormatIconSvg = "assets/icons/svg/text_format.svg";
+  static const weightIconSvg = "assets/icons/svg/weight.svg";
 }
