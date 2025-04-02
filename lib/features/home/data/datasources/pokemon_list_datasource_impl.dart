@@ -32,7 +32,7 @@ class PokemonListDataSourceImpl implements PokemonListDataSource {
     required String pokemonIndex,
   }) async {
     final request = Request(
-      url: Urls.getPokemon + pokemonIndex,
+      url: pokemonIndex,
       method: RequestType.get,
     );
     return await _networkManager.call<PokemonDetailsDto>(

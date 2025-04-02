@@ -8,6 +8,7 @@ class PokemonDetails extends Equatable {
   final List<PokemonType> types;
   final int height;
   final int weight;
+  final String id;
   final List<PokemonAbility> abilities;
   final List<PokemonStat> stats;
   final PokemonSprites sprites;
@@ -16,6 +17,7 @@ class PokemonDetails extends Equatable {
     required this.types,
     required this.height,
     required this.weight,
+    required this.id,
     required this.abilities,
     required this.stats,
     required this.sprites,
@@ -25,6 +27,7 @@ class PokemonDetails extends Equatable {
     List<PokemonType>? types,
     int? height,
     int? weight,
+    String? id,
     List<PokemonAbility>? abilities,
     List<PokemonStat>? stats,
     PokemonSprites? sprites,
@@ -33,6 +36,7 @@ class PokemonDetails extends Equatable {
       types: types ?? this.types,
       height: height ?? this.height,
       weight: weight ?? this.weight,
+      id: id ?? this.id,
       abilities: abilities ?? this.abilities,
       stats: stats ?? this.stats,
       sprites: sprites ?? this.sprites,

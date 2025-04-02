@@ -4,6 +4,7 @@ import 'package:flutter_test_project/core/constants/route_constants.dart';
 import 'package:flutter_test_project/core/di/injection.dart';
 import 'package:flutter_test_project/features/dashboard/presentation/bloc/dashboard_navigation_cubit.dart';
 import 'package:flutter_test_project/features/dashboard/presentation/pages/dashboard_screen.dart';
+import 'package:flutter_test_project/features/home/presentation/bloc/get_pokemon_list_bloc.dart';
 import 'package:flutter_test_project/features/splash/presentation/cubit/splash_cubit.dart';
 import 'package:flutter_test_project/features/splash/presentation/pages/splash_screen.dart';
 import 'package:go_router/go_router.dart';
@@ -26,6 +27,7 @@ class TestRouter {
           return MultiBlocProvider(
             providers: [
               BlocProvider.value(value: getIt<DashboardNavigationCubit>()),
+              BlocProvider.value(value: getIt<DrSearchBloc>()),
             ],
             child: const DashboardScreen(),
           );

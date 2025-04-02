@@ -10,6 +10,7 @@ part 'pokemon_details_dto.g.dart';
 class PokemonDetailsDto {
   final List<PokemonTypeDto> types;
   final int height;
+  final int id;
   final int weight;
   final List<PokemonAbilityDto> abilities;
   final List<PokemonStatDto> stats;
@@ -19,6 +20,7 @@ class PokemonDetailsDto {
     required this.types,
     required this.height,
     required this.weight,
+    required this.id,
     required this.abilities,
     required this.stats,
     required this.sprites,

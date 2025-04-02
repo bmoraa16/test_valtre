@@ -5,10 +5,10 @@ import 'package:injectable/injectable.dart';
 import 'package:multiple_result/multiple_result.dart';
 
 @lazySingleton
-class GetFavoriteProvidersUseCase {
+class GetPokemonDetailsUseCase {
   final PokemonListRepository _pokemonDetailsRepository;
 
-  GetFavoriteProvidersUseCase(this._pokemonDetailsRepository);
+  GetPokemonDetailsUseCase(this._pokemonDetailsRepository);
 
   Future<Result<PokemonDetails, NetworkError>> execute(
       String pokemonIndex) async {

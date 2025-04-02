@@ -42,6 +42,7 @@ extension MapperPokemonDetailsDto on PokemonDetailsDto {
       types: types.map((results) => results.toDomain).toList(),
       weight: weight,
       height: height,
+      id: id.toString(),
       abilities: abilities.map((results) => results.toDomain).toList(),
       stats: stats.map((results) => results.toDomain).toList(),
     );

@@ -12,7 +12,7 @@ ThemeData getDarkModeThemeData() {
   final placeholderColor = AppColors.hbGrey.withOpacity(0.5);
   final backgroundColor = AppColors.hbWhite.getMaterialColor();
   return ThemeData(
-    fontFamily: "Poppins",
+    fontFamily: 'Poppins',
     primaryColor: primaryColor,
     primarySwatch: primaryColor,
     colorScheme: AppThemes.darkColorScheme,
@@ -84,12 +84,15 @@ ThemeData getDarkModeThemeData() {
     appBarTheme: AppBarTheme(
       elevation: 0,
       centerTitle: false,
-      iconTheme: IconThemeData(color: primaryColor),
-      backgroundColor: Colors.white,
+      iconTheme: IconThemeData(
+        color: AppColors.grayScaleWhite,
+      ),
+      backgroundColor: Colors.transparent,
       titleTextStyle: TextStyle(
-        color: primaryColor,
+        fontFamily: 'Poppins',
+        color: AppColors.grayScaleWhite,
         fontWeight: FontWeight.bold,
-        fontSize: 20,
+        fontSize: 24,
       ),
     ),
     tabBarTheme: TabBarTheme(

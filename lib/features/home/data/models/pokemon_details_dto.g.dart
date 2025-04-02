@@ -13,6 +13,7 @@ PokemonDetailsDto _$PokemonDetailsDtoFromJson(Map<String, dynamic> json) =>
           .toList(),
       height: (json['height'] as num).toInt(),
       weight: (json['weight'] as num).toInt(),
+      id: (json['id'] as num).toInt(),
       abilities: (json['abilities'] as List<dynamic>)
           .map((e) => PokemonAbilityDto.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -27,6 +28,7 @@ Map<String, dynamic> _$PokemonDetailsDtoToJson(PokemonDetailsDto instance) =>
     <String, dynamic>{
       'types': instance.types,
       'height': instance.height,
+      'id': instance.id,
       'weight': instance.weight,
       'abilities': instance.abilities,
       'stats': instance.stats,

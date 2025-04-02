@@ -1,5 +1,7 @@
 abstract class AppAssets {
   static const splashAnimation = "assets/anim_splash.json";
+  static const backgroundPokemonType =
+      "assets/background_gray_pokemon_type.png";
 
   //Icons png
   static const arrowBackIcon = "assets/icons/png/arrow_back.png";
@@ -13,6 +15,7 @@ abstract class AppAssets {
   static const tagIcon = "assets/icons/png/tag.png";
   static const textFormatIcon = "assets/icons/png/text_format.png";
   static const weightIcon = "assets/icons/png/weight.png";
+  static const pokemonSiluete = "assets/icons/png/pokemon_siluete.png";
 
   //Icons svg
   static const arrowBackIconSvg = "assets/icons/svg/arrow_back.svg";
