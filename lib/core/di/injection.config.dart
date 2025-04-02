@@ -11,6 +11,16 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
+import '../../features/dashboard/data/datasources/pokemon_list_datasource.dart'
+    as _i6;
+import '../../features/dashboard/data/datasources/pokemon_list_datasource_impl.dart'
+    as _i7;
+import '../../features/dashboard/data/repositories/pokemon_list_repository_impl.dart'
+    as _i9;
+import '../../features/dashboard/domain/repositories/pokemon_list_repository.dart'
+    as _i8;
+import '../../features/dashboard/domain/usecases/get_pokemon_list_use_case.dart'
+    as _i10;
 import '../../features/dashboard/presentation/bloc/dashboard_navigation_cubit.dart'
     as _i4;
 import '../../features/splash/presentation/cubit/splash_cubit.dart' as _i5;
@@ -31,6 +41,12 @@ extension GetItInjectableX on _i1.GetIt {
     gh.singleton<_i4.DashboardNavigationCubit>(
         () => _i4.DashboardNavigationCubit());
     gh.lazySingleton<_i5.SplashCubit>(() => _i5.SplashCubit());
+    gh.factory<_i6.PokemonListDataSource>(
+        () => _i7.PokemonListDataSourceImpl(gh<_i3.NetworkManager>()));
+    gh.factory<_i8.PokemonListRepository>(
+        () => _i9.PokemonListRepositoryImpl(gh<_i6.PokemonListDataSource>()));
+    gh.lazySingleton<_i10.GetZocdocAnonymousTokenUseCase>(() =>
+        _i10.GetZocdocAnonymousTokenUseCase(gh<_i8.PokemonListRepository>()));
     return this;
   }
 }

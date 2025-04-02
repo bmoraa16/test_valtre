@@ -32,7 +32,6 @@ class NetworkManager {
 
   Future<Result<T, NetworkError>> call<T>({
     required Request request,
-    required String errorMsg,
     required T Function(Map<String, dynamic> response) mapper,
   }) async {
     if (await InternetConnectionChecker.createInstance().hasConnection) {
