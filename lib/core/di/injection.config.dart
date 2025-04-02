@@ -11,18 +11,20 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../../features/dashboard/data/datasources/pokemon_list_datasource.dart'
-    as _i6;
-import '../../features/dashboard/data/datasources/pokemon_list_datasource_impl.dart'
-    as _i7;
-import '../../features/dashboard/data/repositories/pokemon_list_repository_impl.dart'
-    as _i9;
-import '../../features/dashboard/domain/repositories/pokemon_list_repository.dart'
-    as _i8;
-import '../../features/dashboard/domain/usecases/get_pokemon_list_use_case.dart'
-    as _i10;
 import '../../features/dashboard/presentation/bloc/dashboard_navigation_cubit.dart'
     as _i4;
+import '../../features/home/data/datasources/pokemon_list_datasource.dart'
+    as _i6;
+import '../../features/home/data/datasources/pokemon_list_datasource_impl.dart'
+    as _i7;
+import '../../features/home/data/repositories/pokemon_list_repository_impl.dart'
+    as _i9;
+import '../../features/home/domain/repositories/pokemon_list_repository.dart'
+    as _i8;
+import '../../features/home/domain/usecases/get_pokemon_list_use_case.dart'
+    as _i10;
+import '../../features/home/presentation/bloc/get_pokemon_list_bloc.dart'
+    as _i11;
 import '../../features/splash/presentation/cubit/splash_cubit.dart' as _i5;
 import '../managers/network_manager.dart' as _i3;
 
@@ -45,8 +47,10 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i7.PokemonListDataSourceImpl(gh<_i3.NetworkManager>()));
     gh.factory<_i8.PokemonListRepository>(
         () => _i9.PokemonListRepositoryImpl(gh<_i6.PokemonListDataSource>()));
-    gh.lazySingleton<_i10.GetZocdocAnonymousTokenUseCase>(() =>
-        _i10.GetZocdocAnonymousTokenUseCase(gh<_i8.PokemonListRepository>()));
+    gh.lazySingleton<_i10.GetPokemonListTokenUseCase>(
+        () => _i10.GetPokemonListTokenUseCase(gh<_i8.PokemonListRepository>()));
+    gh.singleton<_i11.DrSearchBloc>(
+        () => _i11.DrSearchBloc(gh<_i10.GetPokemonListTokenUseCase>()));
     return this;
   }
 }

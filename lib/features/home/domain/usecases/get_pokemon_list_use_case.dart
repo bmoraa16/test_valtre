@@ -5,10 +5,10 @@ import 'package:injectable/injectable.dart';
 import 'package:multiple_result/multiple_result.dart';
 
 @lazySingleton
-class GetZocdocAnonymousTokenUseCase {
+class GetPokemonListTokenUseCase {
   final PokemonListRepository _pokemonListRepository;
 
-  GetZocdocAnonymousTokenUseCase(this._pokemonListRepository);
+  GetPokemonListTokenUseCase(this._pokemonListRepository);
 
   Future<Result<PokemonResponse, NetworkError>> execute() async {
     return await _pokemonListRepository.getPokemonList();
