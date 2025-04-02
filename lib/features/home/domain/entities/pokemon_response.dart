@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter_test_project/features/dashboard/domain/entities/pokemon_result.dart';
+import 'package:flutter_test_project/features/home/domain/entities/pokemon_result.dart';
 
 class PokemonResponse extends Equatable {
   final int count;

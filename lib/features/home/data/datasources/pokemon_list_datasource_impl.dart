@@ -1,6 +1,6 @@
 import 'package:flutter_test_project/core/constants/urls.dart';
-import 'package:flutter_test_project/features/dashboard/data/datasources/pokemon_list_datasource.dart';
-import 'package:flutter_test_project/features/dashboard/data/models/pokemon_response_dto.dart';
+import 'package:flutter_test_project/features/home/data/datasources/pokemon_list_datasource.dart';
+import 'package:flutter_test_project/features/home/data/models/pokemon_response_dto.dart';
 import 'package:injectable/injectable.dart';
 import 'package:multiple_result/multiple_result.dart';
 

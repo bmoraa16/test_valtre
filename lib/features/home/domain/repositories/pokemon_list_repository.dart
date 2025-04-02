@@ -1,5 +1,5 @@
 import 'package:flutter_test_project/core/error.dart';
-import 'package:flutter_test_project/features/dashboard/domain/entities/pokemon_response.dart';
+import 'package:flutter_test_project/features/home/domain/entities/pokemon_response.dart';
 import 'package:multiple_result/multiple_result.dart';
 
 abstract interface class PokemonListRepository {

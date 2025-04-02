@@ -1,4 +1,4 @@
-import 'package:flutter_test_project/features/dashboard/data/models/pokemon_result_dto.dart';
+import 'package:flutter_test_project/features/home/data/models/pokemon_result_dto.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'pokemon_response_dto.g.dart';
