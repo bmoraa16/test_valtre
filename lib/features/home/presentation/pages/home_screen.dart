@@ -21,6 +21,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final bloc = context.watch<DrSearchBloc>();
+    final canLoadMore = bloc.canLoadMore;
     return Scaffold(
       body: BlocBuilder<DrSearchBloc, GetPokemonState>(
         builder: (context, state) {
@@ -70,9 +72,28 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
+                  ElevatedButton(
+                    onPressed: canLoadMore && !state.isLoadingMore
+                        ? () {
+                            context
+                                .read<DrSearchBloc>()
+                                .add(const LoadMorePokemonEvent());
+                          }
+                        : null,
+                    style: ElevatedButton.styleFrom(),
+                    child: state.isLoadingMore
+                        ? const SizedBox(
+                            width: 20,
+                            height: 20,
+                            child: CircularProgressIndicator(strokeWidth: 2),
+                          )
+                        : const Text('Cargar más'),
+                  )
                 ],
               ),
             );
+          } else if (state is DrSearchError) {
+            return Center(child: Text(state.message));
           } else {
             return const Center(
               child: Text(AppDictionary.genericError),

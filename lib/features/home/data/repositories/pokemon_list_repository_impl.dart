@@ -24,6 +24,20 @@ class PokemonListRepositoryImpl implements PokemonListRepository {
   }
 
   @override
+  Future<Result<PokemonResponse, NetworkError>> loadMorePokemonList({
+    required String nextUrl,
+  }) async {
+    final result = await _pokemonListDataSource.loadMorePokemonList(
+      nextUrl: nextUrl,
+    );
+    if (result.isSuccess()) {
+      return Result.success(result.getOrThrow().toDomain);
+    }
+
+    return Result.error(result.tryGetError()!);
+  }
+
+  @override
   Future<Result<PokemonDetails, NetworkError>> getPokemonDetails({
     required String pokemonIndex,
   }) async {

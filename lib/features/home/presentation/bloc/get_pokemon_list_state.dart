@@ -14,14 +14,28 @@ class GetPokemonLoading extends GetPokemonState {}
 class GetPokemonLoaded extends GetPokemonState {
   final List<PokemonResult> pokemonList;
   final List<PokemonDetails> pokemonDetail;
+  final bool isLoadingMore;
 
   const GetPokemonLoaded({
     required this.pokemonList,
     required this.pokemonDetail,
+    this.isLoadingMore = false,
   });
 
+  GetPokemonLoaded copyWith({
+    List<PokemonResult>? pokemonList,
+    List<PokemonDetails>? pokemonDetail,
+    bool? isLoadingMore,
+  }) {
+    return GetPokemonLoaded(
+      pokemonList: pokemonList ?? this.pokemonList,
+      pokemonDetail: pokemonDetail ?? this.pokemonDetail,
+      isLoadingMore: isLoadingMore ?? this.isLoadingMore,
+    );
+  }
+
   @override
-  List<Object> get props => [pokemonList];
+  List<Object> get props => [pokemonList, pokemonDetail, isLoadingMore];
 }
 
 class DrSearchError extends GetPokemonState {

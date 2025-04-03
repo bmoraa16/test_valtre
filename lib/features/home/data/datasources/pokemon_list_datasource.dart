@@ -5,6 +5,9 @@ import 'package:multiple_result/multiple_result.dart';
 
 abstract interface class PokemonListDataSource {
   Future<Result<PokemonResponseDto, NetworkError>> getPokemonList();
+  Future<Result<PokemonResponseDto, NetworkError>> loadMorePokemonList({
+    required String nextUrl,
+  });
 
   Future<Result<PokemonDetailsDto, NetworkError>> getPokemonDetails({
     required String pokemonIndex,

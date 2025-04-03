@@ -22,11 +22,13 @@ import '../../features/home/data/repositories/pokemon_list_repository_impl.dart'
 import '../../features/home/domain/repositories/pokemon_list_repository.dart'
     as _i8;
 import '../../features/home/domain/usecases/get_pokemon_details_use_case.dart'
-    as _i11;
+    as _i12;
 import '../../features/home/domain/usecases/get_pokemon_list_use_case.dart'
     as _i10;
+import '../../features/home/domain/usecases/load_more_pokemon_list_use_case.dart'
+    as _i11;
 import '../../features/home/presentation/bloc/get_pokemon_list_bloc.dart'
-    as _i12;
+    as _i13;
 import '../../features/splash/presentation/cubit/splash_cubit.dart' as _i5;
 import '../managers/network_manager.dart' as _i3;
 
@@ -51,11 +53,14 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i9.PokemonListRepositoryImpl(gh<_i6.PokemonListDataSource>()));
     gh.lazySingleton<_i10.GetPokemonListTokenUseCase>(
         () => _i10.GetPokemonListTokenUseCase(gh<_i8.PokemonListRepository>()));
-    gh.lazySingleton<_i11.GetPokemonDetailsUseCase>(
-        () => _i11.GetPokemonDetailsUseCase(gh<_i8.PokemonListRepository>()));
-    gh.singleton<_i12.DrSearchBloc>(() => _i12.DrSearchBloc(
+    gh.lazySingleton<_i11.LoadMorePokemonListTokenUseCase>(() =>
+        _i11.LoadMorePokemonListTokenUseCase(gh<_i8.PokemonListRepository>()));
+    gh.lazySingleton<_i12.GetPokemonDetailsUseCase>(
+        () => _i12.GetPokemonDetailsUseCase(gh<_i8.PokemonListRepository>()));
+    gh.singleton<_i13.DrSearchBloc>(() => _i13.DrSearchBloc(
           gh<_i10.GetPokemonListTokenUseCase>(),
-          gh<_i11.GetPokemonDetailsUseCase>(),
+          gh<_i12.GetPokemonDetailsUseCase>(),
+          gh<_i11.LoadMorePokemonListTokenUseCase>(),
         ));
     return this;
   }

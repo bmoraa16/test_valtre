@@ -20,3 +20,23 @@ class GetPokemonDetailsEvent extends GetPokemonListEvent {
   @override
   List<Object> get props => [];
 }
+
+class ChangeSortEvent extends GetPokemonListEvent {
+  final SortType sortType;
+  const ChangeSortEvent(this.sortType);
+
+  @override
+  List<Object> get props => [sortType];
+}
+
+class SearchPokemonEvent extends GetPokemonListEvent {
+  final String query;
+  const SearchPokemonEvent(this.query);
+
+  @override
+  List<Object> get props => [query];
+}
+
+class LoadMorePokemonEvent extends GetPokemonListEvent {
+  const LoadMorePokemonEvent();
+}

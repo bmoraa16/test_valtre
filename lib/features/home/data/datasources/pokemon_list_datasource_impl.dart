@@ -28,6 +28,21 @@ class PokemonListDataSourceImpl implements PokemonListDataSource {
   }
 
   @override
+  Future<Result<PokemonResponseDto, NetworkError>> loadMorePokemonList({
+    required String nextUrl,
+  }) async {
+    final request = Request(
+      url: nextUrl,
+      method: RequestType.get,
+    );
+
+    return await _networkManager.call<PokemonResponseDto>(
+      mapper: PokemonResponseDto.fromJson,
+      request: request,
+    );
+  }
+
+  @override
   Future<Result<PokemonDetailsDto, NetworkError>> getPokemonDetails({
     required String pokemonIndex,
   }) async {
