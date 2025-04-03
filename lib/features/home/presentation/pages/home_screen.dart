@@ -7,6 +7,7 @@ import 'package:flutter_test_project/features/home/presentation/widgets/load_mor
 import 'package:flutter_test_project/features/home/presentation/widgets/pokemon_grid.dart';
 import 'package:flutter_test_project/features/home/presentation/widgets/searchbar_pokemon.dart';
 import 'package:flutter_test_project/theme/app_colors.dart';
+import 'package:flutter_test_project/theme/widgets/hb_scaffold_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -29,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final bloc = context.watch<DrSearchBloc>();
     final canLoadMore = bloc.canLoadMore;
 
-    return Scaffold(
+    return HbScaffoldWidget(
       body: SafeArea(
         child: BlocBuilder<DrSearchBloc, GetPokemonState>(
           builder: (context, state) {

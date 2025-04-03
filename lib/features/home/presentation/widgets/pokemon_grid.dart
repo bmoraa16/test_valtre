@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_test_project/core/constants/route_constants.dart';
 import 'package:flutter_test_project/features/home/domain/entities/pokemon_details.dart';
 import 'package:flutter_test_project/features/home/domain/entities/pokemon_result.dart';
 import 'package:flutter_test_project/features/home/presentation/widgets/pokemon_card.dart';
+import 'package:flutter_test_project/theme/app_colors.dart';
+import 'package:go_router/go_router.dart';
 
 class PokemonGridWidget extends StatelessWidget {
   final List<PokemonResult> pokemonList;
@@ -31,6 +34,17 @@ class PokemonGridWidget extends StatelessWidget {
           number: detail.id,
           pokemonName: pokemon.name,
           pokemonImage: detail.sprites.frontDefault,
+          onTap: () {
+            context.push(
+              RouteConstants.detailsPokemon,
+              extra: {
+                "colorType": PokemonTypeColorMapper.getColorFromType(
+                    detail.types[0].type.name),
+                "pokemon": pokemon,
+                "pokemonDetails": detail,
+              },
+            );
+          },
         );
       },
     );

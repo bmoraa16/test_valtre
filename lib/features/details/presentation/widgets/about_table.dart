@@ -43,7 +43,7 @@ class AboutTable extends StatelessWidget {
                 Expanded(
                   child: buildCell(
                     icon: Image.asset(AppAssets.weightIcon, height: 16),
-                    value: kg,
+                    value: '$kg kg',
                     label: AppDictionary.weight,
                   ),
                 ),
@@ -58,7 +58,7 @@ class AboutTable extends StatelessWidget {
                         quarterTurns: 1,
                         child:
                             Image.asset(AppAssets.straightenIcon, height: 16)),
-                    value: m,
+                    value: '$m m',
                     label: AppDictionary.height,
                   ),
                 ),

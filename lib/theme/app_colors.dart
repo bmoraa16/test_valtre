@@ -60,3 +60,48 @@ abstract class AppColors {
     hbPink,
   ];
 }
+
+class PokemonTypeColorMapper {
+  static Color getColorFromType(String type) {
+    switch (type.toLowerCase()) {
+      case 'bug':
+        return AppColors.pokemonTypeBug;
+      case 'dark':
+        return AppColors.pokemonTypeDark;
+      case 'dragon':
+        return AppColors.pokemonTypeDragon;
+      case 'electric':
+        return AppColors.pokemonTypeEletric;
+      case 'fairy':
+        return AppColors.pokemonTypeFairy;
+      case 'fighting':
+        return AppColors.pokemonTypeFighting;
+      case 'fire':
+        return AppColors.pokemonTypeFire;
+      case 'flying':
+        return AppColors.pokemonTypeFlying;
+      case 'ghost':
+        return AppColors.pokemonTypeGhost;
+      case 'normal':
+        return AppColors.pokemonTypeNormal;
+      case 'grass':
+        return AppColors.pokemonTypeGrass;
+      case 'ground':
+        return AppColors.pokemonTypeGround;
+      case 'ice':
+        return AppColors.pokemonTypeIce;
+      case 'poison':
+        return AppColors.pokemonTypePoison;
+      case 'psychic':
+        return AppColors.pokemonTypePsychic;
+      case 'rock':
+        return AppColors.pokemonTypeRock;
+      case 'steel':
+        return AppColors.pokemonTypeSteel;
+      case 'water':
+        return AppColors.pokemonTypeWatter;
+      default:
+        return AppColors.hbGrey;
+    }
+  }
+}

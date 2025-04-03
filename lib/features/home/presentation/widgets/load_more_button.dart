@@ -27,10 +27,13 @@ class LoadMoreButton extends StatelessWidget {
       ),
       onPressed: canLoadMore && !isLoadingMore ? onPressed : null,
       child: isLoadingMore
-          ? const SizedBox(
+          ? SizedBox(
               width: 20,
               height: 20,
-              child: CircularProgressIndicator(strokeWidth: 2),
+              child: CircularProgressIndicator(
+                strokeWidth: 2,
+                color: AppColors.hbRedPrimary,
+              ),
             )
           : const Text(
               AppDictionary.loadMore,

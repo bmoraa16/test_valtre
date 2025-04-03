@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_test_project/core/extensions/string_extensions.dart';
 import 'package:flutter_test_project/theme/app_colors.dart';
 
 class PokemonChipType extends StatelessWidget {
@@ -14,7 +15,7 @@ class PokemonChipType extends StatelessWidget {
   Widget build(BuildContext context) {
     return Chip(
       label: Text(
-        label,
+        label.toCapitalized(),
         style: TextStyle(
           fontSize: 10,
           color: AppColors.grayScaleWhite,
