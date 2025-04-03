@@ -12,6 +12,7 @@ part 'get_pokemon_list_event.dart';
 part 'get_pokemon_list_state.dart';
 
 enum SortType {
+  none,
   number,
   name,
 }
@@ -35,10 +36,11 @@ class DrSearchBloc extends Bloc<GetPokemonListEvent, GetPokemonState> {
   }
 
   bool get canLoadMore => _nextUrl != null && _nextUrl!.isNotEmpty;
+  SortType get currentSortType => _sortType;
   List<PokemonResult> _pokemonList = [];
   final List<PokemonDetails> _detailedPokemonList = [];
   String? _nextUrl;
-  SortType _sortType = SortType.number;
+  SortType _sortType = SortType.none;
   String _searchQuery = '';
 
   Future<void> _onInitialize(
@@ -80,7 +82,7 @@ class DrSearchBloc extends Bloc<GetPokemonListEvent, GetPokemonState> {
   ) async {
     if (_pokemonList.isEmpty) {
       emit(const DrSearchError(
-        'No se encontró la lista inicial de pokémon para obtener detalles.',
+        AppDictionary.genericError,
       ));
       return;
     }
@@ -103,7 +105,7 @@ class DrSearchBloc extends Bloc<GetPokemonListEvent, GetPokemonState> {
             newDetails.add(successDetail);
           },
           (failure) {
-            print("Error al obtener detalles de un Pokémon: $failure");
+            print("${AppDictionary.genericError} $failure");
           },
         );
       }
@@ -219,7 +221,7 @@ class DrSearchBloc extends Bloc<GetPokemonListEvent, GetPokemonState> {
             _detailedPokemonList.add(successDetail);
           },
           (failure) {
-            print("Error al obtener detalles de un Pokémon: $failure");
+            print("${AppDictionary.genericError} $failure");
           },
         );
       }
@@ -254,17 +256,22 @@ class DrSearchBloc extends Bloc<GetPokemonListEvent, GetPokemonState> {
       );
     }
 
-    combined.sort((a, b) {
-      switch (_sortType) {
-        case SortType.number:
+    switch (_sortType) {
+      case SortType.none:
+        break;
+
+      case SortType.number:
+        combined.sort((a, b) {
           final idA = int.tryParse(a.$2.id) ?? 0;
           final idB = int.tryParse(b.$2.id) ?? 0;
           return idA.compareTo(idB);
+        });
+        break;
 
-        case SortType.name:
-          return a.$1.name.compareTo(b.$1.name);
-      }
-    });
+      case SortType.name:
+        combined.sort((a, b) => a.$1.name.compareTo(b.$1.name));
+        break;
+    }
 
     final filteredResults = combined.map((e) => e.$1).toList();
     final filteredDetails = combined.map((e) => e.$2).toList();
